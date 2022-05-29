@@ -8,6 +8,10 @@ import { MatTabsModule } from "@angular/material/tabs";
 import { CryptoPageComponent } from './crypto-page/crypto-page.component';
 import { HttpClientModule } from "@angular/common/http";
 import { CryptoTabComponent } from './crypto-page/components/crypto-tab/crypto-tab.component';
+import { SocketIoConfig, SocketIoModule } from "ngx-socket-io";
+import { environment } from "../environments/environment";
+
+const socketIoConfig: SocketIoConfig = { url: environment.apiUrl, options: {} };
 
 @NgModule({
   declarations: [
@@ -21,6 +25,7 @@ import { CryptoTabComponent } from './crypto-page/components/crypto-tab/crypto-t
     BrowserAnimationsModule,
     HttpClientModule,
     MatTabsModule,
+    SocketIoModule.forRoot(socketIoConfig),
   ],
   providers: [],
   bootstrap: [AppComponent]
