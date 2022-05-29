@@ -1,0 +1,7 @@
+<mat-tab-group mat-align-tabs="center">
+  <ng-container *ngFor="let crypto of cryptos">
+    <mat-tab [label]="crypto.name">
+      <app-crypto-tab [crypto]="crypto"></app-crypto-tab>
+    </mat-tab>
+  </ng-container>
+</mat-tab-group>
